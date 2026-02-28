@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --card: #ffffff;
+  --ring: #0477d1;
+  --input: #e3e3e3;
+  --muted: #eeeeee;
+  --accent: #e3e3e3;
+  --border: #e3e3e3;
+  --radius: 0.5rem;
+  --shadow: 0 0 3px 2px rgba(100, 100, 100, 0.6);
+  --popover: #ffffff;
+  --primary: #0477d1;
+  --spacing: 4px;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --secondary: #edf6fc;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 3px 3px 5px 0 rgba(100, 100, 100, 0.6);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --background: #ffffff;
+  --foreground: #222222;
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --destructive: #d9363d;
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --card-foreground: #222222;
+  --muted-foreground: #787878;
+  --accent-foreground: #035392;
+  --popover-foreground: #222222;
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #575757;
+  --destructive-foreground: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
