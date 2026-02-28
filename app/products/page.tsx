@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { Particles } from "@/components/ui/particles";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 export default function Products() {
   const products = [
@@ -32,16 +32,9 @@ export default function Products() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#edf6fc] to-white pt-36 pb-20 px-4 relative">
-      <Particles
-        className="absolute inset-0"
-        quantity={60}
-        ease={70}
-        color="#0477d1"
-        size={0.6}
-        refresh
-      />
-      <div className="max-w-6xl mx-auto relative z-10">
+    <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
+      <div className="pt-36 pb-20 px-4">
+        <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +57,7 @@ export default function Products() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
               whileHover={{ y: -10 }}
-              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all flex flex-col"
             >
               <div className={`h-64 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden`}>
                 <motion.div
@@ -81,16 +74,16 @@ export default function Products() {
                   />
                 </motion.div>
               </div>
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-1">
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h2>
-                <p className="text-gray-600 mb-6">{product.description}</p>
+                <p className="text-gray-600 mb-6 flex-1">{product.description}</p>
                 <Link href={`/products/${product.slug}`}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-[#0477d1] hover:bg-[#035392] text-white font-semibold py-3 px-6 rounded-full flex items-center gap-2 transition-colors"
                   >
-                    Learn More
+                    Get Details
                     <ArrowRight className="w-5 h-5" />
                   </motion.button>
                 </Link>
@@ -98,7 +91,8 @@ export default function Products() {
             </motion.div>
           ))}
         </div>
+        </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 }

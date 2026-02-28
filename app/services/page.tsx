@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Globe, PackageCheck, TruckIcon, FileText, HeadphonesIcon, Award } from "lucide-react";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 export default function Services() {
   const services = [
@@ -38,8 +39,9 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#edf6fc] pt-36 pb-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <BeamsBackground className="bg-gradient-to-b from-white to-[#edf6fc]" intensity="strong">
+      <div className="pt-36 pb-20 px-4">
+        <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,7 +122,8 @@ export default function Services() {
             </a>
           </motion.div>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 }

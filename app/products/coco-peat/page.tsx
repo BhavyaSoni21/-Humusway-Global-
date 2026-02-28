@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Droplets, Leaf, Shield, Sprout, CheckCircle2, ChevronLeft, ChevronRight, Recycle } from "lucide-react";
 import Link from "next/link";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 export default function CocoPeat() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -17,6 +18,14 @@ export default function CocoPeat() {
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentImage]);
 
   const benefits = [
     "Holds up to 8–10 times its weight in water",
@@ -55,8 +64,9 @@ export default function CocoPeat() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white pt-36 pb-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <BeamsBackground className="bg-gradient-to-b from-amber-50 to-white" intensity="strong" baseHue={45}>
+      <div className="pt-36 pb-20 px-4">
+        <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,13 +97,27 @@ export default function CocoPeat() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-amber-100 to-amber-200">
-              <Image
-                src={images[currentImage]}
-                alt={`Coco Peat - Image ${currentImage + 1}`}
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-transparent">
+              <AnimatePresence initial={false}>
+                <motion.div
+                  key={currentImage}
+                  initial={{ x: '-100%', opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: '100%', opacity: 0 }}
+                  transition={{ 
+                    duration: 1.2, 
+                    ease: [0.43, 0.13, 0.23, 0.96]
+                  }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={images[currentImage]}
+                    alt={`Coco Peat - Image ${currentImage + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
               
               <button
                 onClick={prevImage}
@@ -221,7 +245,8 @@ export default function CocoPeat() {
             </motion.button>
           </Link>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 }

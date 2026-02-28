@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Building2, Globe, Users, Award } from "lucide-react";
-import { Particles } from "@/components/ui/particles";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 export default function About() {
   const features = [
@@ -29,16 +29,9 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#edf6fc] to-white pt-36 pb-20 px-4 relative">
-      <Particles
-        className="absolute inset-0"
-        quantity={50}
-        ease={70}
-        color="#0477d1"
-        size={0.5}
-        refresh
-      />
-      <div className="max-w-6xl mx-auto relative z-10">
+    <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
+      <div className="pt-36 pb-20 px-4">
+        <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,7 +96,8 @@ export default function About() {
             We are committed to promoting organic farming practices and providing natural, chemical-free products that benefit both people and the planet.
           </p>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </BeamsBackground>
   );
 }

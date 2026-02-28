@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Home, Info, Phone, Package, Briefcase } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -15,7 +16,7 @@ const navItems = [
 ]
 
 export function NavBar() {
-  const [activeTab, setActiveTab] = useState(navItems[0].name)
+  const pathname = usePathname()
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -69,15 +70,16 @@ export function NavBar() {
           <nav className="flex items-center gap-2 bg-white/60 border border-gray-200 rounded-full px-2 py-2 shadow-md">
             {navItems.map((item) => {
               const Icon = item.icon
-              const isActive = activeTab === item.name
+              const isActive = item.url === '/' 
+                ? pathname === '/' 
+                : pathname === item.url || pathname.startsWith(item.url + '/')
 
               return (
                 <Link
                   key={item.name}
                   href={item.url}
-                  onClick={() => setActiveTab(item.name)}
                   className={cn(
-                    "relative cursor-pointer text-sm font-semibold px-5 py-2 rounded-full transition-colors",
+                    "relative cursor-pointer text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200",
                     "text-gray-700 hover:text-[#0477d1]",
                     isActive && "bg-[#edf6fc] text-[#0477d1]",
                   )}
@@ -93,14 +95,12 @@ export function NavBar() {
                       initial={false}
                       transition={{
                         type: "spring",
-                        stiffness: 300,
-                        damping: 30,
+                        stiffness: 380,
+                        damping: 35,
                       }}
                     >
                       <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#0477d1] rounded-t-full">
-                        <div className="absolute w-12 h-6 bg-[#0477d1]/20 rounded-full blur-md -top-2 -left-2" />
-                        <div className="absolute w-8 h-6 bg-[#0477d1]/20 rounded-full blur-md -top-1" />
-                        <div className="absolute w-4 h-4 bg-[#0477d1]/20 rounded-full blur-sm top-0 left-2" />
+                        <div className="absolute w-10 h-6 bg-[#0477d1]/15 rounded-full blur-sm -top-2 -left-1" />
                       </div>
                     </motion.div>
                   )}

@@ -2,22 +2,12 @@
 
 import { motion } from "framer-motion";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { Particles } from "@/components/ui/particles";
 import Link from "next/link";
 import { ArrowRight, Leaf, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
     <AuroraBackground className="pt-20">
-      <Particles
-        className="absolute inset-0"
-        quantity={80}
-        ease={80}
-        color="#0477d1"
-        size={0.8}
-        staticity={40}
-        refresh
-      />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
