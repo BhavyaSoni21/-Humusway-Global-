@@ -32,6 +32,13 @@
   --primary-foreground: #ffffff;
   --secondary-foreground: #575757;
   --destructive-foreground: #ffffff;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+}
+
+.dark {
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
 }
 
 * {

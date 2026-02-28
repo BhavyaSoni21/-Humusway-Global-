@@ -1,31 +1,13 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
-import { Droplets, Leaf, Shield, Sprout, CheckCircle2, ChevronLeft, ChevronRight, Recycle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Droplets, Leaf, Shield, Sprout, CheckCircle2, Recycle } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { ImageSwiper } from "@/components/ui/image-swiper";
 
 export default function CocoPeat() {
-  const [currentImage, setCurrentImage] = useState(0);
   const images = ["/images/Coco1.png", "/images/Coco2.png", "/images/Coco3.png"];
-
-  const nextImage = useCallback(() => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  }, [images.length]);
-
-  const prevImage = useCallback(() => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  }, [images.length]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextImage();
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [nextImage]);
 
   const benefits = [
     "Holds up to 8–10 times its weight in water",
@@ -95,56 +77,9 @@ export default function CocoPeat() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative h-[400px] md:h-[500px]"
           >
-            <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-transparent">
-              <AnimatePresence initial={false}>
-                <motion.div
-                  key={currentImage}
-                  initial={{ x: '-100%', opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: '100%', opacity: 0 }}
-                  transition={{ 
-                    duration: 1.2, 
-                    ease: [0.43, 0.13, 0.23, 0.96]
-                  }}
-                  className="absolute inset-0"
-                >
-                  <Image
-                    src={images[currentImage]}
-                    alt={`Coco Peat - Image ${currentImage + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
-              
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-800" />
-              </button>
-              
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-800" />
-              </button>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImage(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      currentImage === index ? "bg-white w-8" : "bg-white/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+            <ImageSwiper images={images} className="shadow-2xl" />
           </motion.div>
 
           <motion.div
