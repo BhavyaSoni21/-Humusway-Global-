@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Heart, Shield, Brain, Sparkles, CheckCircle2, Activity, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
@@ -11,13 +11,13 @@ export default function TurmericPowder() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = ["/images/Term1.png", "/images/Term2.png", "/images/Term3.png"];
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImage((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +25,7 @@ export default function TurmericPowder() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [currentImage]);
+  }, [nextImage]);
 
   const benefits = [
     "Powerful anti-inflammatory compound",

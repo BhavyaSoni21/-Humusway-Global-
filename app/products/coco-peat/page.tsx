@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Droplets, Leaf, Shield, Sprout, CheckCircle2, ChevronLeft, ChevronRight, Recycle } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
@@ -11,13 +11,13 @@ export default function CocoPeat() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = ["/images/Coco1.png", "/images/Coco2.png", "/images/Coco3.png"];
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImage((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +25,7 @@ export default function CocoPeat() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [currentImage]);
+  }, [nextImage]);
 
   const benefits = [
     "Holds up to 8–10 times its weight in water",
@@ -159,7 +159,7 @@ export default function CocoPeat() {
               Coco peat is a versatile and eco-friendly growing medium that offers exceptional advantages for plant cultivation. Made from natural coconut husks, it provides superior water retention while maintaining excellent drainage properties.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              Its ability to retain moisture, pH neutrality, and natural decomposition make it an excellent choice for sustainable agriculture and horticulture. Easy to handle and transport, it's perfect for both commercial farms and home gardens.
+              Its ability to retain moisture, pH neutrality, and natural decomposition make it an excellent choice for sustainable agriculture and horticulture. Easy to handle and transport, it&apos;s perfect for both commercial farms and home gardens.
             </p>
             
             <Link href="/contact">
@@ -233,7 +233,7 @@ export default function CocoPeat() {
             Perfect for All Growing Applications
           </h2>
           <p className="text-lg mb-6 max-w-3xl mx-auto">
-            Whether you're cultivating seeds, seedlings, flowers, or organic vegetables, coco peat provides the ideal growing environment. Its superior water retention and disease resistance ensure healthy, robust plants with higher yields.
+            Whether you&apos;re cultivating seeds, seedlings, flowers, or organic vegetables, coco peat provides the ideal growing environment. Its superior water retention and disease resistance ensure healthy, robust plants with higher yields.
           </p>
           <Link href="/contact">
             <motion.button

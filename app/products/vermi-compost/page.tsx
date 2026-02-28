@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Leaf, Sprout, Shield, Award, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
@@ -11,13 +11,13 @@ export default function VermiCompost() {
   const [currentImage, setCurrentImage] = useState(0);
   const images = ["/images/Verm1.png", "/images/Verm2.png", "/images/Verm3.png"];
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImage((prev) => (prev + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +25,7 @@ export default function VermiCompost() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [currentImage]);
+  }, [nextImage]);
 
   const benefits = [
     "Improves soil structure, texture, porosity, water-holding capacity",

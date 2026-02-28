@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -49,13 +49,13 @@ export function BeamsBackground({
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const beamsRef = useRef<Beam[]>([]);
     const animationFrameRef = useRef<number>(0);
-    const MINIMUM_BEAMS = 20;
+    const MINIMUM_BEAMS = 8; // Reduced from 20 for better performance
 
-    const opacityMap = {
+    const opacityMap = useMemo(() => ({
         subtle: 0.7,
         medium: 0.85,
         strong: 1,
-    };
+    }), []);
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -78,7 +78,7 @@ export function BeamsBackground({
             canvas.style.height = `${height}px`;
             ctx.scale(dpr, dpr);
 
-            const totalBeams = MINIMUM_BEAMS * 1.5;
+            const totalBeams = MINIMUM_BEAMS; // Reduced multiplier for performance
             beamsRef.current = Array.from({ length: totalBeams }, () =>
                 createBeam(canvas.width, canvas.height, baseHue)
             );
@@ -188,10 +188,11 @@ export function BeamsBackground({
                 cancelAnimationFrame(animationFrameRef.current);
             }
         };
-    }, [intensity, baseHue]);
+    }, [intensity, baseHue, opacityMap]);
 
     return (
         <div
+            style={{ willChange: "contents" }}
             className={cn(
                 "relative w-full overflow-hidden",
                 className

@@ -37,7 +37,7 @@ export default function Contact() {
             Get In <span className="text-[#0477d1]">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            We'd love to hear from you. Reach out for export inquiries or any questions.
+            We&apos;d love to hear from you. Reach out for export inquiries or any questions.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

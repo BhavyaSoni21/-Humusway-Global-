@@ -89,7 +89,7 @@ export default function Services() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
           <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
             <p>
-              At <strong className="text-[#0477d1]">Humusway Global Export Private Limited</strong>, we specialize in connecting the world with India's finest organic products. Our focus is on export excellence, ensuring that every shipment meets international quality standards.
+              At <strong className="text-[#0477d1]">Humusway Global Export Private Limited</strong>, we specialize in connecting the world with India&apos;s finest organic products. Our focus is on export excellence, ensuring that every shipment meets international quality standards.
             </p>
             <p>
               We understand the complexities of international trade and work diligently to make the export process smooth and hassle-free for our clients. From product sourcing to final delivery, we manage every step with precision and care.
