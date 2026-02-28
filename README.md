@@ -7,6 +7,26 @@ A modern, animated Next.js website for **Humusway Global Export Private Limited*
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
+## ⚡ Quick Start (Setup on New PC)
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/BhavyaSoni21/-Humusway-Global-.git
+cd -Humusway-Global-
+
+# 2. Install dependencies
+npm install
+
+# 3. Run development server
+npm run dev
+```
+
+**That's it!** Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> **Note**: Requires Node.js 18.0+ ([Download here](https://nodejs.org/))
+
+---
+
 ## 🌟 Features
 
 ✨ **Beautiful Animations** - Smooth animations throughout using Framer Motion  
@@ -19,13 +39,14 @@ A modern, animated Next.js website for **Humusway Global Export Private Limited*
 
 ## 🛠 Tech Stack
 
-- **Framework**: Next.js 14.1.0 (App Router)
+- **Framework**: Next.js 14.2.35 (App Router)
 - **Styling**: Tailwind CSS 3.4
 - **Animations**: Framer Motion 11.0
 - **UI Components**: Custom shadcn/ui components
 - **Icons**: Lucide React
 - **Language**: TypeScript 5.3
 - **Theme Management**: next-themes
+- **Performance**: SWC Compiler, Optimized Package Imports
 
 ## 📄 Pages
 
@@ -59,48 +80,81 @@ A modern, animated Next.js website for **Humusway Global Export Private Limited*
 
 ### Prerequisites
 
-- Node.js 18.0 or higher
-- npm, yarn, or pnpm package manager
+Before setting up the project, ensure you have:
 
-### Installation
+- **Node.js** 18.0 or higher ([Download here](https://nodejs.org/))
+- **npm** (comes with Node.js) or **yarn** / **pnpm**
+- **Git** ([Download here](https://git-scm.com/))
 
-1. **Clone the repository**
+### Installation Steps
+
+#### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/BhavyaSoni21/-Humusway-Global-.git
 cd -Humusway-Global-
 ```
 
-2. **Install dependencies**
+#### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-3. **Run the development server**
+This will install all required packages including:
+- Next.js 14.2.35
+- React 18
+- Tailwind CSS
+- Framer Motion
+- And other dependencies
+
+#### 3. Run Development Server
 
 ```bash
 npm run dev
 ```
 
-4. **Open your browser**
+The site will be available at: **http://localhost:3000**
 
-Navigate to [http://localhost:3000](http://localhost:3000)
+#### 4. View in Browser
 
-### Build for Production
+Open your browser and navigate to [http://localhost:3000](http://localhost:3000)
+
+---
+
+### 🏗️ Build for Production
+
+#### Standard Build
 
 ```bash
 npm run build
 npm start
 ```
 
-### Static Export (Optional)
+This creates an optimized production build and starts the server on port 3000.
 
-For static hosting on platforms like Netlify or GitHub Pages:
+#### Static Export
+
+For deployment to static hosting platforms (Netlify, Vercel, GitHub Pages):
 
 ```bash
 npm run build
 ```
+
+The static files will be generated in the `.next` directory.
+
+---
+
+### ⚡ Performance Tips
+
+- Development server uses **Turbopack** for faster builds
+- Production builds are optimized with **SWC minification**
+- Package imports are optimized for Framer Motion and Lucide React
+- Clear cache if experiencing issues:
+  ```bash
+  rm -rf .next node_modules
+  npm install
+  ```
 
 ## 📁 Project Structure
 
@@ -211,7 +265,60 @@ Adjust particles in each page component:
 - **Email**: info@humuswayglobal.com
 - **Business Hours**: Monday - Saturday, 9:00 AM - 6:00 PM
 
-## 🚢 Deployment
+## � Troubleshooting
+
+### Common Issues on New PC Setup
+
+#### Port Already in Use
+If port 3000 is busy:
+```bash
+# Windows
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+
+# Mac/Linux
+lsof -ti:3000 | xargs kill -9
+```
+
+#### Node Version Issues
+Check your Node.js version:
+```bash
+node --version  # Should be 18.0 or higher
+```
+Update if needed from [nodejs.org](https://nodejs.org/)
+
+#### npm Install Fails
+Try clearing cache:
+```bash
+npm cache clean --force
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### Build Errors
+Clear Next.js cache:
+```bash
+# Windows PowerShell
+Remove-Item -Recurse -Force .next, node_modules
+npm install
+
+# Mac/Linux
+rm -rf .next node_modules
+npm install
+```
+
+#### Slow Performance
+- Use latest Node.js LTS version
+- Close unnecessary applications
+- Run: `npm run dev -- --turbo` for faster builds
+
+#### Git Clone Issues
+If HTTPS clone fails, try:
+```bash
+git clone git@github.com:BhavyaSoni21/-Humusway-Global-.git
+```
+
+## �🚢 Deployment
 
 ### Vercel (Recommended)
 
