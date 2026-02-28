@@ -274,8 +274,7 @@ import { ImageSwiper } from '@/components/ui/image-swiper'
 
 - **Address**: Millennium Emerald Unit B1002, Datta Mandir Road, Wakad, Pune - 411057, India
 - **Phone**: +91 9921789904 / +91 9168991898 / +91 9028378764
-- **Email**: info@humuswayglobal.com
-- **Business Hours**: Monday - Saturday, 9:00 AM - 6:00 PM 
+- **Email**: 
 
 ## � Troubleshooting
 
