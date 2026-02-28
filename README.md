@@ -31,7 +31,8 @@ npm run dev
 
 ✨ **Beautiful Animations** - Smooth animations throughout using Framer Motion  
 🎨 **Interactive Particles** - Dynamic particle effects that respond to mouse movement  
-🎯 **Modern UI** - Aurora backgrounds, tubelight navbar, and polished components  
+🖼️ **Drag-Swipeable Gallery** - Touch-friendly image swiper with smooth transitions  
+🎯 **Modern UI** - Aurora backgrounds, tubelight navbar, and polished shadcn/ui components  
 📱 **Fully Responsive** - Optimized for mobile, tablet, and desktop  
 🚀 **Fast Performance** - Built with Next.js 14 App Router for optimal speed  
 ♿ **Accessible** - ARIA labels and semantic HTML  
@@ -42,7 +43,8 @@ npm run dev
 - **Framework**: Next.js 14.2.35 (App Router)
 - **Styling**: Tailwind CSS 3.4
 - **Animations**: Framer Motion 11.0
-- **UI Components**: Custom shadcn/ui components
+- **UI Components**: shadcn/ui (Button, Card, ImageSwiper)
+- **Component Utilities**: Radix UI, Class Variance Authority
 - **Icons**: Lucide React
 - **Language**: TypeScript 5.3
 - **Theme Management**: next-themes
@@ -59,7 +61,7 @@ npm run dev
 
 ### Product Detail Pages
 1. **Vermi Compost Organic Fertilizer**
-   - Image carousel with 3 product images
+   - Drag-swipeable image gallery with 3 product images
    - Detailed benefits and advantages
    - Key features with icons
    - Call-to-action buttons
@@ -68,13 +70,13 @@ npm run dev
    - High-quality curcumin content information
    - Health benefits and cancer prevention properties
    - Scientific backing and research
-   - Interactive image gallery
+   - Touch-friendly image swiper
 
 3. **Coco Peat**
    - Eco-friendly growing medium details
    - Water retention and pH balance information
    - Disease resistance properties
-   - Agricultural applications
+   - Interactive swipeable gallery
 
 ## 🚀 Getting Started
 
@@ -106,6 +108,8 @@ This will install all required packages including:
 - React 18
 - Tailwind CSS
 - Framer Motion
+- shadcn/ui components
+- Radix UI primitives
 - And other dependencies
 
 #### 3. Run Development Server
@@ -181,7 +185,10 @@ The static files will be generated in the `.next` directory.
 │   └── ui/
 │       ├── tubelight-navbar.tsx    # Animated navigation bar
 │       ├── aurora-background.tsx   # Gradient background effect
-│       ├── particles.tsx           # Interactive particle system
+│       ├── beams-background.tsx    # Animated beams effect
+│       ├── image-swiper.tsx        # Drag-swipeable image gallery
+│       ├── button.tsx              # shadcn/ui Button component
+│       ├── card.tsx                # shadcn/ui Card component
 │       └── theme-toggle.tsx        # Theme switcher
 ├── lib/
 │   └── utils.ts                # Utility functions (cn)
@@ -233,21 +240,26 @@ colors: {
 **3. Component Classes**:
 Replace `text-[#0477d1]` and `bg-[#0477d1]` throughout components
 
-### Particles Configuration
+### Image Swiper Usage
 
-Adjust particles in each page component:
+Use the drag-swipeable image gallery in your components:
 
 ```tsx
-<Particles
-  className="absolute inset-0"
-  quantity={80}      // Number of particles
-  ease={80}          // Movement smoothness
-  color="#0477d1"    // Particle color
-  size={0.8}         // Particle size
-  staticity={40}     // Mouse interaction strength
-  refresh            // Regenerate on mount
+import { ImageSwiper } from '@/components/ui/image-swiper'
+
+<ImageSwiper 
+  images={["/images/img1.png", "/images/img2.png", "/images/img3.png"]}
+  className="shadow-2xl"
 />
 ```
+
+**Features:**
+- Drag to navigate between images
+- Touch-friendly for mobile devices
+- Smooth animations and transitions
+- Navigation buttons appear on hover
+- Image counter indicator
+- Optimized with Next.js Image component
 
 ### Adding New Products
 
@@ -262,7 +274,8 @@ Adjust particles in each page component:
 
 - **Address**: Millennium Emerald Unit B1002, Datta Mandir Road, Wakad, Pune - 411057, India
 - **Phone**: +91 9921789904 / +91 9168991898 / +91 9028378764
-- **Email**: 
+- **Email**: info@humuswayglobal.com
+- **Business Hours**: Monday - Saturday, 9:00 AM - 6:00 PM 
 
 ## � Troubleshooting
 
@@ -357,26 +370,36 @@ For inquiries, contact: info@humuswayglobal.com
 
 Built with ❤️ using Next.js
 
-### Content
+### Content Management
 
 All content is hardcoded in the page components. Edit the respective page files:
-- Company info: `app/about/page.tsx`
-- Products: `app/products/[product]/page.tsx`
-- Contact: `app/contact/page.tsx`
+- **Company info**: `app/about/page.tsx`
+- **Products**: `app/products/[product]/page.tsx`
+- **Contact**: `app/contact/page.tsx`
+- **Home page**: `app/page.tsx`
 
-## Company Information
+### Key Dependencies
 
-**Humusway Global Export Private Limited**
+```json
+{
+  "next": "^14.2.35",
+  "react": "^18.2.0",
+  "framer-motion": "^11.0.3",
+  "tailwindcss": "^3.4.1",
+  "lucide-react": "^0.344.0",
+  "@radix-ui/react-slot": "^1.x",
+  "class-variance-authority": "^0.x"
+}
+```
 
-📍 Millennium Emerald Unit B1002, Datta Mandir Road, Wakad, Pune - 411057, India  
-📞 +91 9921789904 / +91 9168991898 / +91 9028378764  
-📧 info@humuswayglobal.com
+---
 
-## Products
+## 📦 Exported Products
 
 1. **Vermi Compost Organic Fertilizer** - Premium organic fertilizer for sustainable agriculture
-2. **Turmeric Powder** - High-quality turmeric with health benefits
+2. **Turmeric Powder** - High-quality turmeric with superior curcumin content
+3. **Coco Peat** - Eco-friendly growing medium for horticulture
 
-## License
+---
 
-Private & Confidential - © 2026 Humusway Global Export Private Limited
+**© 2026 Humusway Global Export Private Limited** - All Rights Reserved
