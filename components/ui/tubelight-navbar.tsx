@@ -38,11 +38,15 @@ export function NavBar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/25 backdrop-blur-sm">
       <div className="block md:hidden w-full bg-white/80 border-b border-gray-200 shadow-sm">
-        <div className="flex items-center justify-between px-4 py-3">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/images/logo.png" alt="Logo" className="w-10 h-10 object-contain" />
-            <span className="font-bold text-lg text-green-600">Humus</span>
-            <span className="font-bold text-lg text-[#0477d1]">Way</span>
+        <div className="flex items-center justify-between px-3 py-2">
+          <Link href="/" className="flex items-center gap-2 min-w-0">
+            <img src="/images/logo.png" alt="Logo" className="w-9 h-9 flex-shrink-0 object-contain" />
+            <div className="flex flex-col min-w-0">
+              <span className="font-bold text-base leading-tight">
+                <span className="text-green-600">Humus</span><span className="text-[#0477d1]">Way</span>
+              </span>
+              <span className="text-[10px] text-gray-500 leading-tight whitespace-nowrap">Global Export Pvt. Ltd.</span>
+            </div>
           </Link>
           <button
             className="p-2 rounded-md border border-gray-300 bg-white shadow-md"

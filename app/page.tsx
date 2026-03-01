@@ -55,6 +55,18 @@ export default function Home() {
             <span className="text-sm font-medium text-gray-700">Premium Organic Exports</span>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
+            className="flex flex-col items-center gap-1"
+          >
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+              <span className="text-green-600">Humus</span><span className="text-[#0477d1]">Way</span>
+            </h2>
+            <p className="text-base md:text-lg font-medium text-gray-500 tracking-wide">Global Export Private Limited</p>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
