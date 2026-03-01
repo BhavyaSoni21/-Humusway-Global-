@@ -49,7 +49,7 @@ export default function Home() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#0477d1]/20 shadow-md"
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#0477d1]/20 shadow-md mt-8"
           >
             <Sparkles className="w-4 h-4 text-[#0477d1]" />
             <span className="text-sm font-medium text-gray-700">Premium Organic Exports</span>
@@ -61,8 +61,8 @@ export default function Home() {
             transition={{ delay: 0.65, duration: 0.6 }}
             className="flex flex-col items-center gap-1"
           >
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
-              <span className="text-[#5C9242]">Humus</span><span className="text-[#1F4D7D]">Way</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              <span className="bg-gradient-to-b from-[#A0BF2D] to-[#20523B] bg-clip-text text-transparent">Humus</span><span className="bg-gradient-to-b from-[#287AB8] to-[#122343] bg-clip-text text-transparent">Way</span>
             </h2>
             <p className="text-base md:text-lg font-medium text-gray-500 tracking-wide">Global Export Private Limited</p>
           </motion.div>
