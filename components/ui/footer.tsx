@@ -8,8 +8,8 @@ export function Footer() {
           © {new Date().getFullYear()} HumusWay Global Export Private Limited. All rights reserved.
         </span>
         <nav className="flex flex-wrap gap-4 items-center justify-center">
-          <a href="/privacy-policy" className="hover:text-[#287AB8] underline">Privacy Policy</a>
-          <a href="/terms" className="hover:text-[#287AB8] underline">Terms of Service</a>
+          <a href="/" className="hover:text-[#287AB8] underline">Privacy Policy</a>
+          <a href="/" className="hover:text-[#287AB8] underline">Terms of Service</a>
           <a href="/contact" className="hover:text-[#287AB8] underline">Contact</a>
         </nav>
         <span>
