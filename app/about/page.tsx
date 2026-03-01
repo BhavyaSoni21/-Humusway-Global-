@@ -32,7 +32,7 @@ export default function About() {
   return (
     <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
       <BackButton />
-      <div className="pt-36 pb-20 px-4">
+      <div className="pt-24 md:pt-36 pb-20 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,10 +40,10 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
             About <span className="text-[#0477d1]">Humusway Global</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Your trusted partner in premium organic exports from India
           </p>
         </motion.div>
@@ -52,15 +52,15 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12"
+          className="bg-white rounded-3xl shadow-xl p-5 sm:p-8 md:p-12 mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
             <strong className="text-[#0477d1]">Humusway Global Export Private Limited</strong> is a leading exporter of premium organic products from India. We specialize in providing high-quality organic fertilizers and natural products to global markets, maintaining the highest standards of quality and service.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -68,7 +68,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl transition-all"
+              className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 text-center hover:shadow-2xl transition-all"
             >
               <motion.div
                 initial={{ scale: 0 }}

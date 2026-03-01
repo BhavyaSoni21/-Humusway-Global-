@@ -35,7 +35,7 @@ export default function Products() {
   return (
     <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
       <BackButton />
-      <div className="pt-36 pb-20 px-4">
+      <div className="pt-24 md:pt-36 pb-20 px-3 sm:px-4">
         <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,15 +43,15 @@ export default function Products() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
             Our <span className="text-[#0477d1]">Products</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Premium organic products exported worldwide
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.slug}
@@ -61,7 +61,7 @@ export default function Products() {
               whileHover={{ y: -10 }}
               className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all flex flex-col"
             >
-              <div className={`h-64 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden`}>
+              <div className={`h-48 sm:h-64 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden`}>
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -76,8 +76,8 @@ export default function Products() {
                   />
                 </motion.div>
               </div>
-              <div className="p-8 flex flex-col flex-1">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">{product.name}</h2>
+              <div className="p-5 sm:p-8 flex flex-col flex-1">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">{product.name}</h2>
                 <p className="text-gray-600 mb-6 flex-1">{product.description}</p>
                 <Link href={`/products/${product.slug}`}>
                   <motion.button

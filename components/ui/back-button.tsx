@@ -10,7 +10,7 @@ export function BackButton() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.4 }}
-      className="fixed top-24 left-4 z-50"
+      className="fixed top-16 md:top-24 left-4 z-40"
     >
       <Link
         href="/"

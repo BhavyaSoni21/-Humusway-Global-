@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Home, Info, Phone, Package, Briefcase } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -40,7 +41,7 @@ export function NavBar() {
       <div className="block md:hidden w-full bg-white/80 border-b border-gray-200 shadow-sm">
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/images/logo.png" alt="Logo" className="w-10 h-10 object-contain" />
+            <Image src="/images/logo.png" alt="Logo" width={160} height={160} className="w-10 h-10 object-contain" />
             <span className="font-bold text-lg text-green-600">Humus</span>
             <span className="font-bold text-lg text-[#0477d1]">Way</span>
           </Link>
@@ -49,7 +50,11 @@ export function NavBar() {
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((open) => !open)}
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+            {menuOpen ? (
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+            ) : (
+              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+            )}
           </button>
         </div>
         {menuOpen && (
@@ -93,9 +98,11 @@ export function NavBar() {
                       className="w-28 h-28 md:w-32 md:h-32 relative flex-shrink-0"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
-                        src="/images/logo.png" 
-                        alt="Humusway Global Logo" 
+                      <Image
+                        src="/images/logo.png"
+                        alt="Humusway Global Logo"
+                        width={256}
+                        height={256}
                         className="w-full h-full object-contain"
                       />
                     </motion.div>
@@ -194,9 +201,11 @@ export function NavBar() {
                     className="w-16 h-16 relative flex-shrink-0"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
+                    <Image 
                       src="/images/logo.png" 
                       alt="Humusway Global Logo" 
+                      width={256}
+                      height={256}
                       className="w-full h-full object-contain"
                     />
                   </motion.div>

@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-background text-foreground antialiased">
         <NavBar />
-        <main className="pt-32 px-2 sm:px-4 md:px-8 max-w-7xl mx-auto w-full">
+        <main className="w-full overflow-x-hidden">
           {children}
         </main>
       </body>
