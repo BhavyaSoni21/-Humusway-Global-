@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen bg-background text-foreground antialiased">
         <NavBar />
-        <main>
+        <main className="pt-32 px-2 sm:px-4 md:px-8 max-w-7xl mx-auto w-full">
           {children}
         </main>
       </body>
