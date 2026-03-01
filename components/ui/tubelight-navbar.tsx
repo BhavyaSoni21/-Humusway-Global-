@@ -43,7 +43,7 @@ export function NavBar() {
             <img src="/images/logo.png" alt="Logo" className="w-9 h-9 flex-shrink-0 object-contain" />
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-base leading-tight">
-                <span className="text-green-600">Humus</span><span className="text-[#0477d1]">Way</span>
+                <span className="text-[#5C9242]">Humus</span><span className="text-[#1F4D7D]">Way</span>
               </span>
               <span className="text-[10px] text-gray-500 leading-tight whitespace-nowrap">Global Export Pvt. Ltd.</span>
             </div>
@@ -112,8 +112,8 @@ export function NavBar() {
                         transition={{ delay: 0.3, duration: 0.5 }}
                       >
                         <h1 className="text-4xl md:text-5xl font-bold leading-tight group-hover:opacity-90 transition-opacity">
-                          <span className="text-green-600">Humus</span>
-                          <span className="text-[#0477d1]">Way</span>
+                          <span className="text-[#5C9242]">Humus</span>
+                          <span className="text-[#1F4D7D]">Way</span>
                         </h1>
                       </motion.div>
                     </Link>
@@ -210,8 +210,8 @@ export function NavBar() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                     >
-                      <h1 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-[#0477d1] transition-colors">
-                        Humusway Global
+                      <h1 className="text-xl font-bold leading-tight">
+                        <span className="text-[#5C9242]">Humus</span><span className="text-[#1F4D7D]">way</span> <span className="text-gray-900">Global</span>
                       </h1>
                       <p className="text-sm text-gray-600">Export Private Limited</p>
                     </motion.div>

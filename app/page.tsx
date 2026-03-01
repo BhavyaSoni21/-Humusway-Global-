@@ -62,7 +62,7 @@ export default function Home() {
             className="flex flex-col items-center gap-1"
           >
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900">
-              <span className="text-green-600">Humus</span><span className="text-[#0477d1]">Way</span>
+              <span className="text-[#5C9242]">Humus</span><span className="text-[#1F4D7D]">Way</span>
             </h2>
             <p className="text-base md:text-lg font-medium text-gray-500 tracking-wide">Global Export Private Limited</p>
           </motion.div>
