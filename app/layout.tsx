@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+import { Footer } from "@/components/ui/footer";
 
 export const metadata: Metadata = {
   title: "Humusway Global Export - Premium Organic Products",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <main className="w-full min-h-screen">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
