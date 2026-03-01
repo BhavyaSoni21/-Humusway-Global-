@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Building2, Globe, Users, Award } from "lucide-react";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function About() {
   const features = [
@@ -30,6 +31,7 @@ export default function About() {
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
@@ -86,14 +88,14 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="bg-gradient-to-r from-[#0477d1] to-[#035392] rounded-3xl shadow-xl p-8 md:p-12 text-white"
+          className="bg-gradient-to-r from-[#0477d1] to-[#035392] rounded-3xl shadow-xl p-6 md:p-8 text-white"
         >
-          <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-          <p className="text-lg leading-relaxed mb-4">
-            To deliver premium quality organic products from India to customers worldwide, while maintaining the highest standards of quality, sustainability, and customer satisfaction.
+          <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+          <p className="text-base leading-relaxed mb-3">
+            To deliver premium quality organic products from India to customers worldwide, maintaining the highest standards of quality and sustainability.
           </p>
-          <p className="text-lg leading-relaxed">
-            We are committed to promoting organic farming practices and providing natural, chemical-free products that benefit both people and the planet.
+          <p className="text-base leading-relaxed">
+            We promote organic farming practices and provide natural, chemical-free products that benefit people and the planet.
           </p>
         </motion.div>
         </div>

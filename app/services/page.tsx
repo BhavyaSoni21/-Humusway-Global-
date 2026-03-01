@@ -3,43 +3,30 @@
 import { motion } from "framer-motion";
 import { Globe, PackageCheck, TruckIcon, FileText, HeadphonesIcon, Award } from "lucide-react";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function Services() {
   const services = [
     {
-      icon: Globe,
+      image: "/images/Global.png",
       title: "Global Export Services",
-      description: "We handle all aspects of exporting premium organic products to customers worldwide with expertise and reliability."
+      description: "We handle all aspects of exporting premium organic products from India to customers worldwide with expertise and reliability."
     },
     {
-      icon: PackageCheck,
+      image: "/images/Quality.png",
       title: "Quality Assurance",
       description: "Every product undergoes rigorous quality checks to ensure you receive only the finest organic products."
     },
     {
-      icon: TruckIcon,
+      image: "/images/Shipping.png",
       title: "Logistics & Shipping",
       description: "Efficient logistics management ensuring timely delivery of your orders anywhere in the world."
     },
-    {
-      icon: FileText,
-      title: "Documentation Support",
-      description: "Complete assistance with export documentation, certifications, and compliance requirements."
-    },
-    {
-      icon: HeadphonesIcon,
-      title: "Customer Support",
-      description: "Dedicated support team available to assist you throughout the ordering and delivery process."
-    },
-    {
-      icon: Award,
-      title: "Custom Solutions",
-      description: "Tailored solutions for bulk orders, packaging requirements, and special customer needs."
-    }
   ];
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-white to-[#edf6fc]" intensity="strong">
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
@@ -52,7 +39,7 @@ export default function Services() {
             Our <span className="text-[#0477d1]">Services</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive export solutions for premium organic products
+            Comprehensive export solutions from India for premium organic products
           </p>
         </motion.div>
 
@@ -64,18 +51,16 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all"
+              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all flex flex-col items-center"
             >
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.4 + index * 0.1, type: "spring" }}
-                className="inline-flex items-center justify-center w-16 h-16 bg-[#edf6fc] rounded-full mb-6"
-              >
-                <service.icon className="w-8 h-8 text-[#0477d1]" />
-              </motion.div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-40 object-contain mb-6"
+                style={{ maxWidth: "220px" }}
+              />
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">{service.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-center">{service.description}</p>
             </motion.div>
           ))}
         </div>
@@ -104,11 +89,11 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="bg-gradient-to-r from-[#0477d1] to-[#035392] rounded-3xl shadow-xl p-8 md:p-12 text-white text-center"
+          className="bg-gradient-to-r from-[#0477d1] to-[#035392] rounded-3xl shadow-xl p-6 md:p-8 text-white text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Exporting?</h2>
-          <p className="text-lg mb-8 opacity-90">
-            Get in touch with us to discuss your requirements and receive a customized quote
+          <h2 className="text-2xl font-bold mb-3">Ready to Start Exporting?</h2>
+          <p className="text-base mb-6 opacity-90">
+            Get in touch with us for a customized quote
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -116,7 +101,7 @@ export default function Services() {
           >
             <a
               href="/contact"
-              className="inline-block bg-white text-[#0477d1] font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl transition-all"
+              className="inline-block bg-white text-[#0477d1] font-bold py-3 px-10 rounded-full shadow-lg hover:shadow-xl transition-all"
             >
               Contact Us Today
             </a>

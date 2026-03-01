@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Leaf, Sprout, Shield, Award, CheckCircle2 } from "lucide-react";
+import { Leaf, Sprout, Shield, Award, CheckCircle2, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import { ImageSwiper } from "@/components/ui/image-swiper";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function VermiCompost() {
+  const [showBenefits, setShowBenefits] = useState(false);
   const images = ["/images/Verm1.png", "/images/Verm2.png", "/images/Verm3.png"];
 
   const benefits = [
@@ -47,6 +50,7 @@ export default function VermiCompost() {
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-green-50 to-white" intensity="strong" baseHue={120}>
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
@@ -109,31 +113,6 @@ export default function VermiCompost() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Key Advantages of Vermicompost
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + index * 0.05 }}
-                className="flex items-start gap-3"
-              >
-                <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 leading-relaxed">{benefit}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {advantages.map((adv, index) => (
             <motion.div
@@ -157,6 +136,51 @@ export default function VermiCompost() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          className="bg-white/95 rounded-3xl shadow-xl p-6 md:p-8 mt-4 mb-12"
+        >
+          <button
+            type="button"
+            onClick={() => setShowBenefits((prev) => !prev)}
+            className="w-full flex items-center justify-between gap-4 text-left"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Key Advantages
+            </h2>
+            <motion.span
+              animate={{ rotate: showBenefits ? 180 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-50 border border-green-200 text-green-700"
+            >
+              <ChevronDown className="w-4 h-4" />
+            </motion.span>
+          </button>
+
+          {showBenefits && (
+            <div className="mt-6 grid md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05 }}
+                  className="bg-green-50/70 rounded-2xl shadow-md p-5 flex items-start gap-3 hover:shadow-xl transition-all"
+                >
+                  <div className="mt-1 flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{benefit}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

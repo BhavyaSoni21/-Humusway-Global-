@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function Contact() {
   const contactInfo = [
@@ -25,6 +26,7 @@ export default function Contact() {
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-white to-[#edf6fc]" intensity="strong">
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto relative z-10">
         <motion.div

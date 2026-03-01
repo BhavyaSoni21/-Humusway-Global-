@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function Products() {
   const products = [
@@ -33,6 +34,7 @@ export default function Products() {
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-[#edf6fc] to-white" intensity="strong">
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto relative z-10">
         <motion.div

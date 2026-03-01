@@ -1,12 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Heart, Shield, Brain, Sparkles, CheckCircle2, Activity } from "lucide-react";
+import { Heart, Shield, Brain, Sparkles, CheckCircle2, Activity, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import { ImageSwiper } from "@/components/ui/image-swiper";
+import { BackButton } from "@/components/ui/back-button";
 
 export default function TurmericPowder() {
+  const [showBenefits, setShowBenefits] = useState(false);
   const images = ["/images/Term1.png", "/images/Term2.png", "/images/Term3.png"];
 
   const benefits = [
@@ -53,6 +56,7 @@ export default function TurmericPowder() {
 
   return (
     <BeamsBackground className="bg-gradient-to-b from-orange-50 to-white" intensity="strong" baseHue={30}>
+      <BackButton />
       <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
@@ -143,23 +147,41 @@ export default function TurmericPowder() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12"
+          className="bg-white rounded-3xl shadow-xl p-6 md:p-8 mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Health Benefits</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 + index * 0.05 }}
-                className="flex items-start gap-3"
-              >
-                <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
-                <p className="text-gray-700 leading-relaxed">{benefit}</p>
-              </motion.div>
-            ))}
-          </div>
+          <button
+            type="button"
+            onClick={() => setShowBenefits((prev) => !prev)}
+            className="w-full flex items-center justify-between gap-4 text-left"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Health Benefits
+            </h2>
+            <motion.span
+              animate={{ rotate: showBenefits ? 180 : 0 }}
+              transition={{ duration: 0.2 }}
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-50 border border-orange-200 text-orange-700"
+            >
+              <ChevronDown className="w-4 h-4" />
+            </motion.span>
+          </button>
+
+          {showBenefits && (
+            <div className="mt-6 grid md:grid-cols-2 gap-6">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + index * 0.05 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle2 className="w-6 h-6 text-orange-600 flex-shrink-0 mt-1" />
+                  <p className="text-gray-700 leading-relaxed">{benefit}</p>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </motion.div>
 
         <motion.div

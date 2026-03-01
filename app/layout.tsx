@@ -16,7 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NavBar />
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
