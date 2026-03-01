@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Globe, PackageCheck, TruckIcon, FileText, HeadphonesIcon, Award } from "lucide-react";
-import Image from "next/image";
 import { BeamsBackground } from "@/components/ui/beams-background";
 import { BackButton } from "@/components/ui/back-button";
 
@@ -28,7 +27,7 @@ export default function Services() {
   return (
     <BeamsBackground className="bg-gradient-to-b from-white to-[#edf6fc]" intensity="strong">
       <BackButton />
-      <div className="pt-24 md:pt-36 pb-20 px-3 sm:px-4">
+      <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,15 +35,15 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Our <span className="text-[#0477d1]">Services</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive export solutions from India for premium organic products
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -52,17 +51,14 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg p-5 sm:p-8 hover:shadow-2xl transition-all flex flex-col items-center"
+              className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all flex flex-col items-center"
             >
-              <div className="w-full h-40 mb-6 relative">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 200px, 220px"
-                />
-              </div>
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-40 object-contain mb-6"
+                style={{ maxWidth: "220px" }}
+              />
               <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed text-center">{service.description}</p>
             </motion.div>
@@ -73,10 +69,10 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="bg-white rounded-3xl shadow-xl p-5 sm:p-8 md:p-12 mb-12"
+          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
-          <div className="space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
+          <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
             <p>
               At <strong className="text-[#0477d1]">Humusway Global Export Private Limited</strong>, we specialize in connecting the world with India&apos;s finest organic products. Our focus is on export excellence, ensuring that every shipment meets international quality standards.
             </p>

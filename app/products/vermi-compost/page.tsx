@@ -51,7 +51,7 @@ export default function VermiCompost() {
   return (
     <BeamsBackground className="bg-gradient-to-b from-green-50 to-white" intensity="strong" baseHue={120}>
       <BackButton />
-      <div className="pt-24 md:pt-36 pb-20 px-3 sm:px-4">
+      <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,10 +68,10 @@ export default function VermiCompost() {
             <Leaf className="w-5 h-5 text-green-600" />
             <span className="text-sm font-semibold text-green-800">Organic Fertilizer</span>
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Vermi Compost <span className="text-green-600">Organic Fertilizer</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Premium quality organic fertilizer for sustainable agriculture and superior crop yields
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ export default function VermiCompost() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[280px] sm:h-[350px] md:h-[500px]"
+            className="relative h-[400px] md:h-[500px]"
           >
             <ImageSwiper images={images} className="shadow-2xl" />
           </motion.div>
@@ -91,13 +91,13 @@ export default function VermiCompost() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Why Choose Our Vermicompost?
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
               One of the key elements in organic farming is compost, a chemical-free organic fertilizer created through the natural decomposition of organic materials. Vermicompost is a superior form of compost produced with the help of earthworms.
             </p>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
               Our premium vermicompost is carefully processed to provide maximum benefits for your crops while maintaining environmental sustainability and superior soil health.
             </p>
             
@@ -121,7 +121,7 @@ export default function VermiCompost() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg p-5 sm:p-8 hover:shadow-2xl transition-all"
+              className="bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all"
             >
               <motion.div
                 initial={{ scale: 0 }}

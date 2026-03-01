@@ -57,7 +57,7 @@ export default function TurmericPowder() {
   return (
     <BeamsBackground className="bg-gradient-to-b from-orange-50 to-white" intensity="strong" baseHue={30}>
       <BackButton />
-      <div className="pt-24 md:pt-36 pb-20 px-3 sm:px-4">
+      <div className="pt-36 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -74,10 +74,10 @@ export default function TurmericPowder() {
             <Sparkles className="w-5 h-5 text-orange-600" />
             <span className="text-sm font-semibold text-orange-800">Premium Quality</span>
           </motion.div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Pure <span className="text-orange-600">Turmeric Powder</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             High-quality turmeric powder with powerful health benefits and superior curcumin content
           </p>
         </motion.div>
@@ -87,7 +87,7 @@ export default function TurmericPowder() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative h-[280px] sm:h-[350px] md:h-[500px]"
+            className="relative h-[400px] md:h-[500px]"
           >
             <ImageSwiper images={images} className="shadow-2xl" />
           </motion.div>
@@ -97,13 +97,13 @@ export default function TurmericPowder() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Why Choose Our Turmeric?
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Our turmeric powder contains several bioactive compounds, with <strong className="text-orange-600">curcumin</strong> being the most active and beneficial. Curcumin is a potent <strong>anti-inflammatory</strong> and <strong>antioxidant</strong> compound with numerous scientifically-backed health benefits.
             </p>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
               We source only the finest turmeric from trusted farms in India, ensuring the highest quality and curcumin content for maximum health benefits.
             </p>
             
@@ -119,7 +119,7 @@ export default function TurmericPowder() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -127,7 +127,7 @@ export default function TurmericPowder() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-lg p-4 sm:p-6 hover:shadow-2xl transition-all"
+              className="bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all"
             >
               <motion.div
                 initial={{ scale: 0 }}

@@ -33,7 +33,7 @@ const testimonials = [
 export default function Home() {
   return (
     <AuroraBackground>
-      <div className="relative z-10 flex flex-col gap-10 md:gap-20 pb-20 pt-[200px] sm:pt-[300px] md:pt-[500px] lg:pt-[700px]">
+      <div className="relative z-10 flex flex-col gap-20 pb-20" style={{ paddingTop: '1000px' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="font-light text-base sm:text-lg md:text-2xl text-gray-600 max-w-3xl py-4"
+            className="font-light text-xl md:text-2xl text-gray-600 max-w-3xl py-4"
           >
             Leading exporter of premium organic products from India.
             <br />
@@ -105,9 +105,9 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        <section className="px-3 sm:px-4 flex justify-center">
-          <div className="w-full max-w-6xl rounded-3xl bg-white/80 backdrop-blur-md shadow-xl border border-white/60 p-4 sm:p-6 md:p-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-2">
+        <section className="px-4 flex justify-center">
+          <div className="w-full max-w-6xl rounded-3xl bg-white/80 backdrop-blur-md shadow-xl border border-white/60 p-8 md:p-10">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-2">
               Our <span className="text-[#0477d1]">Featured Products</span>
             </h2>
             <p className="text-sm md:text-base text-gray-600 text-center mb-8">
@@ -135,8 +135,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="px-3 sm:px-4">
-          <div className="mx-auto max-w-6xl rounded-3xl border border-white/40 bg-white/70 backdrop-blur-md shadow-md p-4 sm:p-6 md:p-10 grid gap-6 md:gap-8 md:grid-cols-3">
+        <section className="px-4">
+          <div className="mx-auto max-w-6xl rounded-3xl border border-white/40 bg-white/70 backdrop-blur-md shadow-md p-8 md:p-10 grid gap-8 md:grid-cols-3">
             <div className="space-y-3 md:col-span-1">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-left">
                 Why Partner With Us?

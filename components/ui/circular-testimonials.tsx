@@ -7,7 +7,6 @@ import React, {
   useCallback,
 } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Testimonial {
@@ -167,24 +166,22 @@ export const CircularTestimonials = ({
   };
 
   return (
-    <div className="w-full max-w-4xl p-3 sm:p-5 md:p-8">
-      <div className="grid gap-8 sm:gap-12 md:gap-20 md:grid-cols-2">
+    <div className="w-full max-w-4xl p-8">
+      <div className="grid gap-20 md:grid-cols-2">
         {/* Images */}
         <div
-          className="relative w-full h-60 sm:h-72 md:h-96"
+          className="relative w-full h-96"
           style={{ perspective: "1000px" }}
           ref={imageContainerRef}
         >
           {testimonials.map((testimonial, index) => (
             // eslint-disable-next-line @next/next/no-img-element
-            <Image
+            <img
               key={testimonial.src}
               src={testimonial.src}
               alt={testimonial.name}
-              fill
               className="absolute w-full h-full object-cover rounded-3xl shadow-2xl"
               style={getImageStyle(index)}
-              sizes="(max-width: 768px) 100vw, 480px"
             />
           ))}
         </div>
@@ -201,20 +198,20 @@ export const CircularTestimonials = ({
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <h3
-                className="font-bold mb-1 text-lg sm:text-xl md:text-2xl"
-                style={{ color: colorName }}
+                className="font-bold mb-1"
+                style={{ color: colorName, fontSize: fontSizeName }}
               >
                 {activeTestimonial.name}
               </h3>
               <p
-                className="mb-4 sm:mb-8 text-sm sm:text-base"
-                style={{ color: colorDesignation }}
+                className="mb-8"
+                style={{ color: colorDesignation, fontSize: fontSizeDesignation }}
               >
                 {activeTestimonial.designation}
               </p>
               <motion.p
-                className="leading-relaxed text-sm sm:text-base md:text-lg"
-                style={{ color: colorTestimony }}
+                className="leading-relaxed"
+                style={{ color: colorTestimony, fontSize: fontSizeQuote }}
               >
                 {activeTestimonial.quote.split(" ").map((word, i) => (
                   <motion.span
@@ -231,7 +228,7 @@ export const CircularTestimonials = ({
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex gap-4 sm:gap-6 pt-6 sm:pt-10">
+          <div className="flex gap-6 pt-10">
             <button
               onClick={handlePrev}
               style={{ backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg }}
