@@ -33,7 +33,7 @@ const testimonials = [
 export default function Home() {
   return (
     <AuroraBackground>
-      <div className="relative z-10 flex flex-col gap-20 pb-20" style={{ paddingTop: '1000px' }}>
+      <div className="relative z-10 flex flex-col gap-20 pt-36 pb-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
