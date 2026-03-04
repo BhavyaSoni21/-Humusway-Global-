@@ -3,6 +3,8 @@ import "./globals.css";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { Footer } from "@/components/ui/footer";
 
+import { WhatsappButton } from "@/components/ui/whatsapp-button";
+
 export const metadata: Metadata = {
   title: "Humusway Global Export - Premium Organic Products",
   description: "Leading exporter of Vermi Compost Organic Fertilizer and Turmeric Powder from India",
@@ -20,6 +22,7 @@ export default function RootLayout({
         <main className="w-full min-h-screen">
           {children}
         </main>
+        <WhatsappButton />
         <Footer />
       </body>
     </html>

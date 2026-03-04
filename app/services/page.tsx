@@ -91,7 +91,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="bg-gradient-to-r from-[#0477d1] to-[#035392] rounded-3xl shadow-xl p-6 md:p-8 text-white text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-2xl font-bold mb-3">Ready to Start Exporting?</h2>
+          <h2 className="text-2xl font-bold mb-3">Bringing Premium Indian Products Worldwide!!</h2>
           <p className="text-base mb-6 opacity-90">
             Get in touch with us for a customized quote
           </p>

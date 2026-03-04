@@ -15,7 +15,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Phone Numbers",
-      content: "+91 9921789904, +91 9168991898, +91 9028378764"
+      content: "+91 9921789904 (Tushar Sudhakar Amrule), +91 9168991898, +91 9028378764"
     },
     {
       icon: Mail,

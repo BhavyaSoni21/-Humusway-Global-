@@ -56,8 +56,18 @@ export default function About() {
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            <strong className="text-[#0477d1]">Humusway Global Export Private Limited</strong> is a leading exporter of premium organic products from India. We specialize in providing high-quality organic fertilizers and natural products to global markets, maintaining the highest standards of quality and service.
+            <strong className="text-[#0477d1]">HUMUSWAY GLOBAL EXPORT PRIVATE LIMITED</strong> is a dynamic Indian export company dedicated to delivering high-quality products to global markets with integrity, efficiency, and reliability. Incorporated on 28 January 2026 and registered with the Registrar of Companies, Pune, we operate as a Private Limited Company with a focused vision of strengthening international trade and building long-term global partnerships.
           </p>
+          <div className="mt-10">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-2">Director</h3>
+            <div className="bg-[#eaf3fb] rounded-2xl p-6 shadow flex flex-col md:flex-row items-start md:items-center gap-4">
+              <div className="flex-shrink-0 w-16 h-16 bg-[#0477d1] rounded-full flex items-center justify-center text-white font-bold text-2xl">T</div>
+              <div>
+                <p className="text-lg font-bold text-gray-900 mb-1">Tushar Sudhakar Amrule</p>
+                <p className="text-gray-700">Engineering graduate and founder with a strong passion for the import–export industry. Specializes in business coordination, supply chain management, and maintaining essential trade documentation. With strong product understanding and a practical approach to operations, he focuses on delivering reliable solutions that align with business and project requirements.</p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
