@@ -63,7 +63,7 @@ export default function About() {
             <div className="bg-[#eaf3fb] rounded-2xl p-6 shadow flex flex-col md:flex-row items-start md:items-center gap-4">
               <div className="flex-shrink-0 w-16 h-16 bg-[#0477d1] rounded-full flex items-center justify-center text-white font-bold text-2xl">T</div>
               <div>
-                <p className="text-lg font-bold text-gray-900 mb-1">Tushar Sudhakar Amrule</p>
+                <p className="text-lg font-bold text-gray-900 mb-1">Tushar Amrule</p>
                 <p className="text-gray-700">Engineering graduate and founder with a strong passion for the import–export industry. Specializes in business coordination, supply chain management, and maintaining essential trade documentation. With strong product understanding and a practical approach to operations, he focuses on delivering reliable solutions that align with business and project requirements.</p>
               </div>
             </div>
