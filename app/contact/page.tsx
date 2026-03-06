@@ -9,7 +9,7 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Address",
+      title: "Official Address",
       content: "Millennium Emerald Unit B1002, Datta Mandir Road, Wakad, Pune - 411057, India"
     },
     {
@@ -19,8 +19,8 @@ export default function Contact() {
     },
     {
       icon: Mail,
-      title: "Email",
-      content: ""
+      title: "Corporate Email",
+      content: "info@humuswayglobalexport.com"
     }
   ];
 
@@ -74,7 +74,18 @@ export default function Contact() {
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{info.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{info.content}</p>
+                  {info.title === "Corporate Email" ? (
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=info@humuswayglobalexport.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#0477d1] underline"
+                    >
+                      info@humuswayglobalexport.com
+                    </a>
+                  ) : (
+                    <p className="text-gray-700 leading-relaxed">{info.content}</p>
+                  )}
                 </div>
               </div>
             </motion.div>
