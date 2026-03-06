@@ -56,7 +56,7 @@ export default function About() {
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            <strong className="text-[#0477d1]">HUMUSWAY GLOBAL EXPORT PRIVATE LIMITED</strong> is a dynamic Indian export company dedicated to delivering high-quality products to global markets with integrity, efficiency, and reliability. Incorporated on 28 January 2026 and registered with the Registrar of Companies, Pune, we operate as a Private Limited Company with a focused vision of strengthening international trade and building long-term global partnerships.
+            <strong className="text-[#0477d1]">HUMUSWAY GLOBAL EXPORT PRIVATE LIMITED</strong> is a dynamic Indian export company dedicated to delivering high-quality products to global markets with integrity, efficiency, and reliability. Registered with the Government of India, we operate as a Private Limited Company with a focused vision of strengthening international trade and building long-term global partnerships. Through strong coordination, efficient supply chain management, and a commitment to quality, we aim to provide dependable export solutions that meet the evolving needs of businesses worldwide.
           </p>
           <div className="mt-10">
             <h3 className="text-2xl font-semibold text-gray-800 mb-2">Director</h3>
